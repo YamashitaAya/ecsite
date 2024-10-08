@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" rel="stylesheet" />
+<title>ECサイト</title>
+</head>
+<body>
+<header>
+  <h1>ECサイト</h1>
+</header>
+<div class="wrapper">
+<h2>ユーザー　新規登録</h2>
+  <form class="signup-form" name="signupForm" th:object="${signupForm}" method="post" action="/ecsite/signup/signupUser">
+    <p><label for="fullName">氏名</label>：<input type="text" name="fullName" th:field="*{fullName}"/></p>
+    <p><label for="userName">ユーザー名</label>：<input type="text" name="userName" th:field="*{userName}" /></p>
+    <p><label for="password">パスワード</label>：<input type="password" name="password" th:field="*{password}" /></p>
+    <button type="submit">登録</button>
+  </form>
+  <p class="error" th:text="${errMessage}"></p>
+</div>
+</body>
+</html>
